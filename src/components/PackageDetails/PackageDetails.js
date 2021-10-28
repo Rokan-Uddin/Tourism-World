@@ -1,12 +1,16 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './PackageDetails.css';
 const PackageDetails = () => {
     const [loading,setLoading]=useState(false);
     const [packageDetails,setPackage]=useState({});
     const {serviceID}= useParams();
+    const {user}=useAuth();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     useEffect(()=>{
       fetch(`https://guarded-fjord-59567.herokuapp.com/package/${serviceID}`)
       .then(response => response.json())
@@ -16,7 +20,19 @@ const PackageDetails = () => {
       })
 
     },[])
-    console.log(serviceID)
+    const onSubmit = data => {
+      data.email=user.email;
+      data.name=user.displayName;
+      data.packageId=serviceID;
+      data.title=packageDetails.name;
+      axios.post('http://localhost:5000/package', data)
+      .then(res => {
+          if (res.data.insertedId) {
+              alert('added successfully');
+              reset();
+          }
+      })
+  };
     return (
       <div>
         {
@@ -41,7 +57,20 @@ const PackageDetails = () => {
              <div>
              <h2 className="mt-5">{packageDetails.name}</h2>
               <p>{packageDetails.description}</p>
-              <Link to='/join' className="myButton mt-5" >Join with us</Link>
+
+              <div className="container d-flex justify-content-center align-items-center mt-5">
+                <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+                    <input value={user.displayName} readOnly  />
+                    <input value={user.email} readOnly />
+                    <input  placeholder="Address" {...register("address", {required:true})} />
+                    {errors.address &&  <span className="error">Address is required</span>}
+                    <input   placeholder="Phone" {...register("phone", {required:true})} />
+                    {errors.phone &&  <span className="error">Phone is required</span>}
+                    <input   placeholder="Total Member" {...register("quantity", {required:true})} />
+                    {errors.quantity &&  <span className="error">Number of Tourist should be confirmed</span>}
+                    <input type="submit" />
+                </form>
+            </div>
              </div>
           </div>
       </div>

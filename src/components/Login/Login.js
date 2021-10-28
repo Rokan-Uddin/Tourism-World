@@ -21,7 +21,7 @@ const Login = () => {
             <h1 className="mt-3">Login Form</h1>
               <div className="container d-flex justify-content-center align-items-center mt-5">
                 <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
-                    <input placeholder="Email" {...register("email", {required:true})} />
+                    <input  placeholder="Email" {...register("email", {required:true})} />
                     {errors.email &&  <span className="error">Email is required</span>}
                     <input type="password" placeholder="Password" {...register("password", { required: true })} />
                     {errors.password &&  <span className="error">Password is required</span>}
