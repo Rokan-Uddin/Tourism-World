@@ -10,7 +10,7 @@ const Banner = () => {
               <div>
               <h1 className="mt-5 text-white">LET'S Travel The World</h1>
               <p className="p-5 fs-5 text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos minima corporis repellendus sapiente id. Assumenda?</p>
-                <Link to='/appoinment' className="myButton" >Make and Appoinment</Link>
+                <Link to='/appoinment' className="myButton" >Contact Us</Link>
               </div>
               </div>
         </div>

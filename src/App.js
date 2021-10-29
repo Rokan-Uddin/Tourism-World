@@ -2,6 +2,7 @@ import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import './App.css';
+import AddPackage from "./components/AddPackage/AddPackage";
 import AllPlan from "./components/AllPlan/AllPlan";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -44,6 +45,9 @@ function App() {
               <PrivateRoute path="/join">
                 <Join></Join>
               </PrivateRoute>
+              <PrivateRoute path="/add">
+                <AddPackage></AddPackage>
+                </PrivateRoute>
               <Route path="/register">
                   <Register></Register>
               </Route>

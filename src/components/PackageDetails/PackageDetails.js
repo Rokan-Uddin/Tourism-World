@@ -25,6 +25,8 @@ const PackageDetails = () => {
       data.name=user.displayName;
       data.packageId=serviceID;
       data.title=packageDetails.name;
+      data.date=packageDetails.startingDate;
+      data.country=packageDetails.location;
       axios.post('http://localhost:5000/package', data)
       .then(res => {
           if (res.data.insertedId) {

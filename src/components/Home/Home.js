@@ -15,9 +15,14 @@ const Home = () => {
         <div>
             
             <Banner></Banner>
+            <div className="border border-4 m-5">
             <h1 className="text-center my-5">Wellcome to The Tourism World</h1>
-            <p className="container text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ea facilis ipsum voluptates modi porro placeat eveniet nam et ipsa.</p>
-            
+            <p className="container text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Voluptatem ea facilis ipsum voluptates modi porro placeat eveniet nam et ipsa.</p>
+            <h3>valo kicu add mara lagbe</h3>
+            <h3>Previous Experience types kicu</h3>
+            </div>
+
             <hr  id="package" className="container my-5" />
             <h1 className="text-center my-5">Our packages</h1>
             <div className="container mb-5">
@@ -29,6 +34,10 @@ const Home = () => {
                     )
                     }
                 </div>
+            </div>
+            <div className="border border-4 m-5">
+                Kicu ekta add marte hbe.......... 
+                location /map types kicu
             </div>
         </div>
     );

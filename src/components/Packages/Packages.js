@@ -12,16 +12,17 @@ const Packages = (props) => {
                         <div>
                         <h2>{name}</h2>
                         <Link to={`/service/${_id}`} >
-                        <button className="details-btn mt-2" >Details</button>
+                        <button className="details-btn mt-2" >See Details</button>
                         </Link>
                         </div>
                     </div>
                 </div>
                 <div>{description.slice(0,200)} ...</div>
-                <p>{price}</p>
-                <p>{days} Days</p>
-                <p>{location}</p>
-                <p>{startingDate}</p>
+                <p>  {days} Days</p>
+                <span>  Price: {price}</span>
+
+                <p>  Country : {location}</p>
+                <span>  Date: {startingDate}</span>
             </div>
         </div>
     );
