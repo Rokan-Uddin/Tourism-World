@@ -36,6 +36,8 @@ const AllPlan = () => {
         }
         {
             <div className="container mt-5">
+             <h3>This is confirmed package list of all tourists.</h3>
+
             {
                 mypackages.map(mypackage=> <div
                 key={mypackage._id}
@@ -48,7 +50,7 @@ const AllPlan = () => {
                     </div>
                     <div className="col-lg-3 row">
                         <p>Tourist: <span className="text-success">{mypackage.name}</span></p>
-                        <button onClick={()=>handleDelete(mypackage._id)} >Delete</button>
+                        <button onClick={()=>handleDelete(mypackage._id)} ><i class="fas fa-trash-alt me-2"></i>Delete</button>
                     </div>
                 </div>
                 )

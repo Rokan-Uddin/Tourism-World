@@ -2,3 +2,9 @@
     width: 400px;
     height: 400px;
 }
+@media only screen and (max-width: 768px) {
+   .service-img{
+       width: 100%;
+       margin-bottom: 10px;
+   }
+  }

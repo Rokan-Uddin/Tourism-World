@@ -57,19 +57,19 @@ const PackageDetails = () => {
              <h2 className="mb-5">{packageDetails.name}</h2>
              <div className="d-flex justify-content-center align-items-center">
                <div className="row">
-                 <div className="col-lg-3">
+                 <div className="col-lg-3 col-6">
                  <i class="fas fa-map-marker-alt"></i> <span>Location</span>
                  <p>{packageDetails.location}</p>
                  </div>
-                 <div className="col-lg-3">
+                 <div className="col-lg-3 col-6">
                  <i class="fas fa-clock"></i> <span>Duration</span>
                  <p>{packageDetails.days} days/ {parseInt(packageDetails.days)-1} Nights</p>
                  </div>
-                 <div className="col-lg-3">
+                 <div className="col-lg-3 col-6">
                  <i class="fas fa-calendar-alt"></i> <span>Journey Date</span>
                  <p>{packageDetails.startingDate}</p>
                  </div>
-                 <div className="col-lg-3">
+                 <div className="col-lg-3 col-6">
                  <i class="fas fa-users"></i> <span>Max Group Size</span>
                  <p>Unlimited</p>
                  </div>

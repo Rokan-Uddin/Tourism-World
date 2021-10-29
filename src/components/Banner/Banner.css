@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 .banner{
     background-image: url('../../images/5.jpg');
     background-color: #cccccc; 
@@ -5,6 +6,11 @@
     background-position: left 20% top 30%; 
     background-repeat: no-repeat; 
     background-size: cover;
+}
+.banner-text {
+	font-family: 'Irish Grover', cursive;
+	font-size: xx-large;
+	font-weight: 800;
 }
 .myButton {
 	box-shadow: 3px 2px 20px 0px #899599;

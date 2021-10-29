@@ -52,7 +52,7 @@ const MyPackage = () => {
                     </div>
                     <div className="col-lg-3 row">
                         <button>Update</button>
-                        <button onClick={()=>handleDelete(mypackage._id)} >Delete</button>
+                        <button onClick={()=>handleDelete(mypackage._id)}><i class="fas fa-trash-alt me-2"></i>Delete</button>
                     </div>
                 </div>
                 )
