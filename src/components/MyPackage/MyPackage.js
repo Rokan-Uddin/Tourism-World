@@ -39,6 +39,7 @@ const MyPackage = () => {
         }
         {
             <div className="container mt-5">
+            <h3>Hello Mr. {user.displayName}, This is your confirmed package list.</h3>
             {
                 mypackages.map(mypackage=> <div
                 key={mypackage._id}

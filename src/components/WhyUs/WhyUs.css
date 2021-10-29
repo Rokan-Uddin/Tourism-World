@@ -1,0 +1,35 @@
+.img-icon{
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 40%;
+    margin-bottom: 10px;
+}
+.first-cart, .second-cart, .third-cart, .forth-cart{
+    padding-left: 15px;
+    height: 250px;
+}
+.first-cart{
+    border-bottom: 3px solid blue;
+}
+.first-cart img{
+    border: 3px solid blue;
+}
+.second-cart{
+    border-bottom: 3px solid rgb(255, 0, 0);
+}
+.second-cart img{
+    border: 3px solid rgb(255, 0, 0);
+}
+.third-cart{
+    border-bottom: 3px solid rgb(234, 0, 255);
+}
+.third-cart img{
+    border: 3px solid rgb(234, 0, 255);
+}
+.forth-cart{
+    border-bottom: 3px solid rgb(0, 255, 115);
+}
+.forth-cart img{
+    border: 3px solid rgb(0, 255, 115);
+}

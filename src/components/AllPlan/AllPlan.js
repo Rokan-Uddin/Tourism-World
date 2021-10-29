@@ -47,7 +47,7 @@ const AllPlan = () => {
                         <p className="col-lg-6">{mypackage.date}</p>
                     </div>
                     <div className="col-lg-3 row">
-                        <button>Update</button>
+                        <p>Tourist: <span className="text-success">{mypackage.name}</span></p>
                         <button onClick={()=>handleDelete(mypackage._id)} >Delete</button>
                     </div>
                 </div>

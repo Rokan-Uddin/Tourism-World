@@ -22,7 +22,7 @@ const Packages = (props) => {
                 <small>{description.slice(0,200)} ...</small>
                 <div className="d-flex justify-content-between mx-3 pt-4">
                     <p>{startingDate}</p>
-                    <h5>{price}</h5>
+                    <h5>$<span className="text-success">{price}</span></h5>
                 </div>
                 <Link to={`/package/${_id}`} >
                         <button className="bg-primary text-white border-0 rounded px-2" >See Details</button>

@@ -27,9 +27,9 @@ const AddPackage = () => {
                     {errors.startingDate &&  <span className="error">Date is required</span>}
                     <input   placeholder="Days" {...register("days", {required:true})} />
                     {errors.days &&  <span className="error">Days is required</span>}
-                    <textarea  placeholder="Description" {...register("description", {required:true})} />
+                    <textarea  placeholder="Description" {...register("description", {required:true})} rows="6" cols="40" />
                     {errors.description &&  <span className="error">Description is required</span>}
-                    <input  placeholder="Image url" {...register("url", {required:true})} />
+                    <input type="url" placeholder="Image url" {...register("url", {required:true})} />
                     {errors.url &&  <span className="error">Image URL is required</span>}
 
                     <input type="submit" />

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import Packages from '../Packages/Packages';
+import TropicalVacation from '../TropicalVacation/TropicalVacation';
+import WhyUs from '../WhyUs/WhyUs';
 const Home = () => {
     // fetch data using useEffect and assing to packages variable 
     const [packages,setPackages]=useState([]);
@@ -15,16 +17,8 @@ const Home = () => {
         <div>
             
             <Banner></Banner>
-            <div className="border border-4 m-5">
-            <h1 className="text-center my-5">Wellcome to The Tourism World</h1>
-            <p className="container text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Voluptatem ea facilis ipsum voluptates modi porro placeat eveniet nam et ipsa.</p>
-            <h3>valo kicu add mara lagbe</h3>
-            <h3>Previous Experience types kicu</h3>
-            </div>
 
-            <hr  id="package" className="container my-5" />
-            <h1 className="text-center my-5">WINTER 2021 TOURS</h1>
+            <h1  id="package" className="text-center my-5">UPCOMING WINTER 2021 TOURS</h1>
             <div className="container mb-5">
                 <div className="row g-4">
                     {
@@ -35,8 +29,9 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <div className="border border-4 m-5">
-            </div>
+            <hr  className="container my-5" />
+            <WhyUs></WhyUs>
+            <TropicalVacation></TropicalVacation>
         </div>
     );
 };

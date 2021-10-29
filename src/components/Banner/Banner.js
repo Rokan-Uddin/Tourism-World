@@ -8,8 +8,8 @@ const Banner = () => {
               <div className="col-lg-6 col-sm-12"></div>
               <div className="col-lg-6 col-sm-12 d-flex justify-content-center align-items-center">
               <div>
-              <h1 className="mt-5 text-primary">LET'S Travel The World</h1>
-              <p className="p-5 fs-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos minima corporis repellendus sapiente id. Assumenda?</p>
+              <h1 className="mt-5 text-primary">Wellcome to The Tourism World</h1>
+              <p className="p-5 fs-5">“Travel makes one modest. You see what a tiny place you occupy in the world.”</p>
                 <Link to='/' className="myButton" >Contact Us</Link>
               </div>
               </div>
