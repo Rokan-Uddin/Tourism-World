@@ -30,9 +30,9 @@ function App() {
                 <Home></Home>
               </Route>
               
-              <Route path="/service/:serviceID">
+              <PrivateRoute path="/package/:packageID">
                 <PackageDetails></PackageDetails>
-              </Route>
+              </PrivateRoute>
               <Route path="/login">
                 <Login></Login>
               </Route>

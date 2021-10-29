@@ -8,11 +8,11 @@ import './PackageDetails.css';
 const PackageDetails = () => {
     const [loading,setLoading]=useState(false);
     const [packageDetails,setPackage]=useState({});
-    const {serviceID}= useParams();
+    const {packageID}= useParams();
     const {user}=useAuth();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     useEffect(()=>{
-      fetch(`https://guarded-fjord-59567.herokuapp.com/package/${serviceID}`)
+      fetch(`https://guarded-fjord-59567.herokuapp.com/package/${packageID}`)
       .then(response => response.json())
       .then(data => {
         setPackage(data)
@@ -23,7 +23,7 @@ const PackageDetails = () => {
     const onSubmit = data => {
       data.email=user.email;
       data.name=user.displayName;
-      data.packageId=serviceID;
+      data.packageId=packageID;
       data.title=packageDetails.name;
       data.date=packageDetails.startingDate;
       data.country=packageDetails.location;

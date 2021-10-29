@@ -11,7 +11,7 @@ const Packages = (props) => {
                     <div className="col-lg-5 d-flex justify-content-center align-items-center">
                         <div>
                         <h2>{name}</h2>
-                        <Link to={`/service/${_id}`} >
+                        <Link to={`/package/${_id}`} >
                         <button className="details-btn mt-2" >See Details</button>
                         </Link>
                         </div>
