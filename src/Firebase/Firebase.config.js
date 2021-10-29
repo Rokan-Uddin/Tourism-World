@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyBVt_DwE3VfMkA9kGsOdq7xvnIg_LShPC8",
-  authDomain: "our-world-d351c.firebaseapp.com",
-  projectId: "our-world-d351c",
-  storageBucket: "our-world-d351c.appspot.com",
-  messagingSenderId: "156842426731",
-  appId: "1:156842426731:web:9535ebdf3157afe184cc2e"
+  apiKey:process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain:process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId:process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket:process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId:process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId:process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 export default firebaseConfig;
