@@ -24,20 +24,18 @@ const Home = () => {
             </div>
 
             <hr  id="package" className="container my-5" />
-            <h1 className="text-center my-5">Our packages</h1>
+            <h1 className="text-center my-5">WINTER 2021 TOURS</h1>
             <div className="container mb-5">
                 <div className="row g-4">
                     {
-                    packages.map((service)=><Packages
-                        service={service}
+                    packages.map((pkg)=><Packages
+                    package={pkg}
                         ></Packages>
                     )
                     }
                 </div>
             </div>
             <div className="border border-4 m-5">
-                Kicu ekta add marte hbe.......... 
-                location /map types kicu
             </div>
         </div>
     );
