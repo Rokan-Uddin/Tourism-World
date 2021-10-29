@@ -6,7 +6,7 @@ const AddPackage = () => {
     const { register, handleSubmit, formState: { errors },reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/add',data)
+        axios.post('https://guarded-fjord-59567.herokuapp.com/add',data)
         .then(res=>{
             alert("Added Successfully")
             reset()

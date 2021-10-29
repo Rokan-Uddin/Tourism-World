@@ -27,7 +27,7 @@ const PackageDetails = () => {
       data.title=packageDetails.name;
       data.date=packageDetails.startingDate;
       data.country=packageDetails.location;
-      axios.post('http://localhost:5000/package', data)
+      axios.post('https://guarded-fjord-59567.herokuapp.com/package', data)
       .then(res => {
           if (res.data.insertedId) {
               alert('added successfully');

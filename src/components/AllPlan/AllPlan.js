@@ -6,7 +6,7 @@ const AllPlan = () => {
     const [mypackages,setMypackages]=useState([]);
     const [loading,setLoading]=useState(false);
     useEffect(()=>{
-        axios.get('http://localhost:5000/allconfirmedpackage')
+        axios.get('https://guarded-fjord-59567.herokuapp.com/allconfirmedpackage')
         .then(res => {
             setMypackages(res.data);
             setLoading(true)
@@ -15,7 +15,7 @@ const AllPlan = () => {
     const handleDelete=(_id)=>{
         const sure= window.confirm("Are you sure?")
         if(sure) {
-            axios.delete(`http://localhost:5000/mypackage?id=${_id}`)
+            axios.delete(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}`)
             .then(res => {
                 if(res.status){
                     setLoading(false)

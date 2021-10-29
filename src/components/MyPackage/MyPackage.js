@@ -9,7 +9,7 @@ const MyPackage = () => {
     const [loading,setLoading]=useState(false);
     const {user}= useAuth();
     useEffect(()=>{
-        axios.post(`http://localhost:5000/mypackage?email=${user.email}`)
+        axios.post(`https://guarded-fjord-59567.herokuapp.com/mypackage?email=${user.email}`)
         .then(res => {
             setMypackages(res.data);
             setLoading(true)
@@ -18,7 +18,7 @@ const MyPackage = () => {
     const handleDelete=(_id)=>{
         const sure= window.confirm("Are you sure?")
         if(sure) {
-            axios.delete(`http://localhost:5000/mypackage?id=${_id}`)
+            axios.delete(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}`)
             .then(res => {
                 if(res.status){
                     setLoading(false)
