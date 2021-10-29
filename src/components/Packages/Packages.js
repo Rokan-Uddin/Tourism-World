@@ -26,7 +26,7 @@ const Packages = (props) => {
                 </div>
                 <Link to={`/package/${_id}`} >
                         <button className="bg-primary text-white border-0 rounded px-2" >See Details</button>
-                        </Link>
+                </Link>
             </div>
         </div>
     );

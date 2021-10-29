@@ -25,6 +25,19 @@ const AllPlan = () => {
         }
 
     }
+    //update plan pending/approved status
+    const handleUpdate=(_id,status)=>{
+        const sure= window.confirm("Are you sure?")
+        if(sure) {
+            axios.put(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}&&status=${status}`)
+            .then(res => {
+                if(res.status){
+                    setLoading(false)
+                    alert("Updated Successfully")
+                }
+            })
+        }
+    }
     return (
         <div>
                     {
@@ -50,7 +63,14 @@ const AllPlan = () => {
                     </div>
                     <div className="col-lg-3 row">
                         <p>Tourist: <span className="text-success">{mypackage.name}</span></p>
+                        
+                        <div className="m-0">
                         <button onClick={()=>handleDelete(mypackage._id)} ><i class="fas fa-trash-alt me-2"></i>Delete</button>
+                        <button onClick={()=>handleUpdate(mypackage._id,mypackage.status)} >
+                            <i class={ !mypackage.status ? "fas fa-spinner me-2" : "fas fa-check-circle me-2"}></i>
+                            {mypackage.status ? "Approved" : "Pending"}
+                        </button>
+                        </div>
                     </div>
                 </div>
                 )

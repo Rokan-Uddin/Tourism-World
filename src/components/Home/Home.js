@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Banner from '../Banner/Banner';
 import Packages from '../Packages/Packages';
 import TropicalVacation from '../TropicalVacation/TropicalVacation';
@@ -17,7 +18,15 @@ const Home = () => {
         <div>
             
             <Banner></Banner>
-
+            <div>
+                {
+                    !packages.length && <div>
+                <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+                    </div>
+                }
+            </div>
             <h1  id="package" className="text-center my-5">UPCOMING WINTER 2021 TOURS</h1>
             <div className="container mb-5">
                 <div className="row g-4">
