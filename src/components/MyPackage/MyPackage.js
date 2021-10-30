@@ -30,7 +30,7 @@ const MyPackage = () => {
     }
     return (
         <div>
-                    {
+            {
             !loading && <div>
                 <Spinner animation="border" role="status">
                 <span className="visually-hidden">Loading...</span>
