@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 const AddPackage = () => {
     const { register, handleSubmit, formState: { errors },reset } = useForm();
     const onSubmit = data => {
-        console.log(data)
         axios.post('https://guarded-fjord-59567.herokuapp.com/add',data)
         .then(res=>{
             alert("Added Successfully")
@@ -14,7 +13,8 @@ const AddPackage = () => {
     };
     return (
         <div>
-                        <h1 className="mt-3">Make a Tour Plan.</h1>
+              <h1 className="mt-3">Make a Tour Plan.</h1>
+              
               <div className="container d-flex justify-content-center align-items-center mt-5">
                 <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
                     <input  placeholder="Title" {...register("name", {required:true})} />

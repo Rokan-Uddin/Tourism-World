@@ -5,6 +5,7 @@ import Packages from '../Packages/Packages';
 import TropicalVacation from '../TropicalVacation/TropicalVacation';
 import WhyUs from '../WhyUs/WhyUs';
 const Home = () => {
+
     // fetch data using useEffect and assing to packages variable 
     const [packages,setPackages]=useState([]);
     useEffect(()=>{
@@ -16,14 +17,13 @@ const Home = () => {
     },[])
     return (
         <div>
-            
             <Banner></Banner>
             <div>
                 {
                     !packages.length && <div>
-                <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
+                         <Spinner animation="border" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                        </Spinner>
                     </div>
                 }
             </div>

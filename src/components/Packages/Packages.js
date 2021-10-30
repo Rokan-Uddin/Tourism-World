@@ -5,7 +5,7 @@ const Packages = (props) => {
     const {_id,name,description,url,location,price,startingDate,days}=props.package;
     return (
         <div className="col-lg-4 col-sm-12">
-            <div className="">
+            <div>
                 <div className="row cart">
                     <div className="col-lg-12"><img src={url} alt="" /></div>
                     <div>

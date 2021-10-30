@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -22,7 +21,6 @@ const Header = () => {
             <Nav>
             {
                 user.email ? 
-                
                 <Button onClick={logOut} variant="light">Logout <i className="fas fa-sign-out-alt"></i> </Button> :
                 <Nav.Link as={Link} to="/login">Sign-In <i className="fas fa-sign-in-alt"></i> </Nav.Link>
             }

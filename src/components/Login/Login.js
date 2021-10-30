@@ -9,9 +9,11 @@ const Login = () => {
     const history = useHistory()
     const redirect_uri=  location.state?.from || '/home';
     const { register, handleSubmit, formState: { errors } } = useForm();
+
     const onSubmit = data => {
         signInUsingEmailPassword(data.email,data.password,history,redirect_uri);
     };
+    
     // send history,redirect_uri to signInUsingGoogle such that redirect to the target page after successfully login
      const handleGoogleSignIn=() =>{
         signInUsingGoogle(history,redirect_uri);
