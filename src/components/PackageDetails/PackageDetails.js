@@ -52,15 +52,14 @@ const PackageDetails = () => {
         {
         loading &&  <div>
          <div className="container my-5">
-                  <div className="row border-top">
+                  <div className="row">
                       <hr />
                       <div className="col-lg-4 col-sm-12">
                             <img className="p-3 border border-secondary border-4 rounded-circle rounder-3 service-img" src={packageDetails.url} alt="" />
                       </div>
-                      <div className="col-lg-8 col-sm-12 d-flex justify-content-center ">
+                      <div className="col-lg-8 col-sm-12">
                           <div>
                           <h2 className="mb-5">{packageDetails.name}</h2>
-                          <div className="d-flex justify-content-center align-items-center">
                               <div className="row">
                                   <div className="col-lg-3 col-6">
                                       <i class="fas fa-map-marker-alt"></i> <span>Location</span>
@@ -76,10 +75,50 @@ const PackageDetails = () => {
                                   </div>
                                   <div className="col-lg-3 col-6">
                                       <i class="fas fa-users"></i> <span>Max Group Size</span>
-                                      <p>Unlimited</p>
+                                      <p>1 to 50</p>
                                   </div>
                               </div>
-                          </div>
+                              <div className="row my-lg-5 my-2">
+                                  <div className="ps-lg-5 ps-3 text-start point">
+                                  <i class="far fa-hand-point-right"></i> 
+                                  <span>  Free Cancellation up to 24 hours before the start of the tour.</span>
+                                  </div>
+                                  <div className="ps-lg-5 ps-3 text-start point">
+                                  <i class="far fa-hand-point-right"></i> 
+                                  <span>  Starting Price ${packageDetails.price}(per adult person).</span>
+                                  </div>
+                                  <div className="ps-lg-5 ps-3 text-start point">
+                                  <i class="far fa-hand-point-right"></i> 
+                                  <span>  Childre(age below 5) don't need to pay.</span>
+                                  </div>
+                                  
+                              </div>
+                              <div className="row my-5">
+                                      <div className="col-lg-3 col-6">
+                                      <div className="facilities">
+                                      <i class="fas fa-child"></i>
+                                      <small> Kid Friendly</small>
+                                      </div>
+                                      </div>
+                                      <div className="col-lg-3 col-6">
+                                      <div className="facilities">
+                                      <i class="fas fa-people-carry"></i>
+                                      <small> OutDoorActivities</small>
+                                      </div>
+                                      </div>
+                                      <div className="col-lg-3 col-6">
+                                      <div className="facilities">
+                                      <i class="fas fa-snowboarding"></i>
+                                      <small> Adventure</small>
+                                      </div>
+                                      </div>
+                                      <div className="col-lg-3 col-6">
+                                      <div className="facilities">
+                                      <i class="fas fa-mountain"></i>
+                                      <small> SightSeeing</small>
+                                      </div>
+                                      </div>
+                                </div>
                           </div>
                       </div>
                   </div>

@@ -25,7 +25,7 @@ const Packages = (props) => {
                     <h5>$<span className="text-success">{price}</span></h5>
                 </div>
                 <Link to={`/package/${_id}`} >
-                        <button className="bg-primary text-white border-0 rounded px-2" >See Details</button>
+                        <button className="new-btn" >See Details</button>
                 </Link>
             </div>
         </div>
