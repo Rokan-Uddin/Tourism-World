@@ -3,7 +3,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../hooks/useAuth';
-
+import './Header.css';
 const Header = () => {
     const {user,logOut}= useAuth();
     return (
@@ -25,7 +25,11 @@ const Header = () => {
                 <Nav.Link as={Link} to="/login">Sign-In <i className="fas fa-sign-in-alt"></i> </Nav.Link>
             }
             </Nav>
-            <Nav.Link>{user?.displayName}</Nav.Link>
+            <Nav.Link>{user?.displayName}
+            </Nav.Link>
+            {
+                 user.photoURL && <img className="nav-img" src={user.photoURL} alt="" />
+            }
         </Navbar.Collapse>
         </Container>
         </Navbar>

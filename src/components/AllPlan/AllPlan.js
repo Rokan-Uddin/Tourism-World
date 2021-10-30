@@ -23,7 +23,9 @@ const AllPlan = () => {
                     .then(res => {
                         if(res.status){
                             setLoading(false)
-                            alert("Deleted Successfully")
+                        }
+                        else{
+                            alert("Something is wrong,please try again")
                         }
                     })
                 }
@@ -37,7 +39,9 @@ const AllPlan = () => {
                     .then(res => {
                         if(res.status){
                             setLoading(false)
-                            alert("Updated Successfully")
+                        }
+                        else {
+                            alert("Something is wrong,please try again.")
                         }
                     })
                 }
@@ -61,18 +65,20 @@ const AllPlan = () => {
                     className="row g-4 m-3 border border-4"
                     >
                         <div className="col-lg-9 row">
-                            <h4 className="col-lg-12">{mypackage.title}</h4>
-                            <p className="col-lg-6">{mypackage.country}</p>
-                            <p className="col-lg-6">{mypackage.date}</p>
+                            <h4 className="col-lg-12">{mypackage.title}(<span className="fs-6">
+                                <i className={ !mypackage.status ? "fas fa-spinner me-2 text-danger" : "fas fa-check-circle me-2 text-success"}></i>
+                                {mypackage.status ? "Approved" : "Pending"}</span>)
+                            </h4>
+                            <div className="col-lg-6"><i className="fas fa-map-marker-alt"></i><span > {mypackage.country}</span></div>
+                            <div className="col-lg-6"><i className="fas fa-calendar-alt"></i> <span> {mypackage.date}</span></div>
                         </div>
                         <div className="col-lg-3 row">
-                            <p>Tourist: <span className="text-success">{mypackage.name}</span></p>
+                            <p>Tourist: <span className="text-primary">{mypackage.name}</span></p>
                             
                             <div className="m-0">
-                            <button onClick={()=>handleDelete(mypackage._id)} ><i class="fas fa-trash-alt me-2"></i>Delete</button>
-                            <button onClick={()=>handleUpdate(mypackage._id,mypackage.status)} >
-                                <i class={ !mypackage.status ? "fas fa-spinner me-2" : "fas fa-check-circle me-2"}></i>
-                                {mypackage.status ? "Approved" : "Pending"}
+                            <button onClick={()=>handleDelete(mypackage._id)} className="delete-btn" ><i class="fas fa-trash-alt me-2"></i>Delete</button>
+                            <button onClick={()=>handleUpdate(mypackage._id,mypackage.status)} className={ mypackage.status ? "approve-btn px-3" : "reject-btn px-3"} >
+                                {mypackage.status ? "Reject" : "Approve"}
                             </button>
                             </div>
                         </div>

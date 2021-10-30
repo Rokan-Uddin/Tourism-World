@@ -7,7 +7,7 @@ const Login = () => {
     const {signInUsingGoogle,signInUsingEmailPassword,error}= useAuth();
     const location = useLocation();
     const history = useHistory()
-    const redirect_uri=  location.state?.from || '/home';
+    const redirect_uri=  location.state?.from || '/';
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {

@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './PackageDetails.css';
 const PackageDetails = () => {
@@ -11,6 +11,7 @@ const PackageDetails = () => {
     const {packageID}= useParams();
     const {user}=useAuth();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const history= useHistory();
 
     //load package details infomation based on package id
     useEffect(()=>{
@@ -36,6 +37,7 @@ const PackageDetails = () => {
           if (res.data.insertedId) {
               alert('added successfully');
               reset();
+              history.push('/myplan');
           }
       })
    };
@@ -62,33 +64,33 @@ const PackageDetails = () => {
                           <h2 className="mb-5">{packageDetails.name}</h2>
                               <div className="row">
                                   <div className="col-lg-3 col-6">
-                                      <i class="fas fa-map-marker-alt"></i> <span>Location</span>
+                                      <i className="fas fa-map-marker-alt"></i> <span>Location</span>
                                       <p>{packageDetails.location}</p>
                                   </div>
                                   <div className="col-lg-3 col-6">
-                                      <i class="fas fa-clock"></i> <span>Duration</span>
+                                      <i className="fas fa-clock"></i> <span>Duration</span>
                                       <p>{packageDetails.days} days/ {parseInt(packageDetails.days)-1} Nights</p>
                                   </div>
                                   <div className="col-lg-3 col-6">
-                                      <i class="fas fa-calendar-alt"></i> <span>Journey Date</span>
+                                      <i className="fas fa-calendar-alt"></i> <span>Journey Date</span>
                                       <p>{packageDetails.startingDate}</p>
                                   </div>
                                   <div className="col-lg-3 col-6">
-                                      <i class="fas fa-users"></i> <span>Max Group Size</span>
+                                      <i className="fas fa-users"></i> <span>Max Group Size</span>
                                       <p>1 to 50</p>
                                   </div>
                               </div>
                               <div className="row my-lg-5 my-2">
                                   <div className="ps-lg-5 ps-3 text-start point">
-                                  <i class="far fa-hand-point-right"></i> 
+                                  <i className="far fa-hand-point-right"></i> 
                                   <span>  Free Cancellation up to 24 hours before the start of the tour.</span>
                                   </div>
                                   <div className="ps-lg-5 ps-3 text-start point">
-                                  <i class="far fa-hand-point-right"></i> 
+                                  <i className="far fa-hand-point-right"></i> 
                                   <span>  Starting Price ${packageDetails.price}(per adult person).</span>
                                   </div>
                                   <div className="ps-lg-5 ps-3 text-start point">
-                                  <i class="far fa-hand-point-right"></i> 
+                                  <i className="far fa-hand-point-right"></i> 
                                   <span>  Childre(age below 5) don't need to pay.</span>
                                   </div>
                                   
@@ -96,25 +98,25 @@ const PackageDetails = () => {
                               <div className="row my-5">
                                       <div className="col-lg-3 col-6">
                                       <div className="facilities">
-                                      <i class="fas fa-child"></i>
+                                      <i className="fas fa-child"></i>
                                       <small> Kid Friendly</small>
                                       </div>
                                       </div>
                                       <div className="col-lg-3 col-6">
                                       <div className="facilities">
-                                      <i class="fas fa-people-carry"></i>
+                                      <i className="fas fa-people-carry"></i>
                                       <small> OutDoorActivities</small>
                                       </div>
                                       </div>
                                       <div className="col-lg-3 col-6">
                                       <div className="facilities">
-                                      <i class="fas fa-snowboarding"></i>
+                                      <i className="fas fa-snowboarding"></i>
                                       <small> Adventure</small>
                                       </div>
                                       </div>
                                       <div className="col-lg-3 col-6">
                                       <div className="facilities">
-                                      <i class="fas fa-mountain"></i>
+                                      <i className="fas fa-mountain"></i>
                                       <small> SightSeeing</small>
                                       </div>
                                       </div>

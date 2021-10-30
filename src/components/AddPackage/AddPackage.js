@@ -1,14 +1,17 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router';
 
 const AddPackage = () => {
     const { register, handleSubmit, formState: { errors },reset } = useForm();
+    const history = useHistory()
     const onSubmit = data => {
         axios.post('https://guarded-fjord-59567.herokuapp.com/add',data)
         .then(res=>{
             alert("Added Successfully")
             reset()
+            history.push('/');
         })
     };
     return (
@@ -26,9 +29,9 @@ const AddPackage = () => {
                     <input type="date" placeholder="Date" {...register("startingDate", {required:true})} />
                     {errors.startingDate &&  <span className="error">Date is required</span>}
                     <input   placeholder="Days" {...register("days", {required:true})} />
-                    {errors.days &&  <span className="error">Days is required</span>}
+                    {errors.days &&  <p className="error">Days is required</p>}
                     <textarea  placeholder="Description" {...register("description", {required:true})} rows="6" cols="40" />
-                    {errors.description &&  <span className="error">Description is required</span>}
+                    {errors.description &&  <p className="error">Description is required</p>}
                     <input type="url" placeholder="Image url" {...register("url", {required:true})} />
                     {errors.url &&  <span className="error">Image URL is required</span>}
 

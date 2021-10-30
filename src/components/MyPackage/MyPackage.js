@@ -43,7 +43,7 @@ const MyPackage = () => {
                 }
                 {
                 <div className="container mt-5">
-                    <h3>Hello Mr. {user.displayName}, This is your confirmed package list.</h3>
+                    <h3>Hello Mr. <span className="text-info">{user.displayName}</span>, This is your confirmed package list.</h3>
                     {
                         mypackages.map(mypackage=> <div
                         key={mypackage._id}
@@ -51,12 +51,12 @@ const MyPackage = () => {
                         >
                             <div className="col-lg-9 row">
                                 <h4 className="col-lg-12">{mypackage.title}</h4>
-                                <p className="col-lg-6">{mypackage.country}</p>
-                                <p className="col-lg-6">{mypackage.date}</p>
+                                <div className="col-lg-6"><i className="fas fa-map-marker-alt"></i><span > {mypackage.country}</span></div>
+                                <div className="col-lg-6"><i className="fas fa-calendar-alt"></i> <span> {mypackage.date}</span></div>
                             </div>
                             <div className="col-lg-3 row">
-                                <button>Update</button>
-                                <button onClick={()=>handleDelete(mypackage._id)}><i class="fas fa-trash-alt me-2"></i>Delete</button>
+                                <p>Official Status: <span className={mypackage.status ? "text-success" : "text-warning"}>{mypackage.status ? "Approved" : "Pending"}</span> </p>
+                                <button onClick={()=>handleDelete(mypackage._id)} className="delete-btn" ><i className="fas fa-trash-alt me-2"></i>Delete</button>
                             </div>
                         </div>
                         )
