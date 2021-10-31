@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
-
+import './AddPackage.css';
 const AddPackage = () => {
     const { register, handleSubmit, formState: { errors },reset } = useForm();
     const history = useHistory()
@@ -30,7 +30,7 @@ const AddPackage = () => {
                     {errors.startingDate &&  <span className="error">Date is required</span>}
                     <input   placeholder="Days" {...register("days", {required:true})} />
                     {errors.days &&  <p className="error">Days is required</p>}
-                    <textarea  placeholder="Description" {...register("description", {required:true})} rows="6" cols="40" />
+                    <textarea  placeholder="Description" {...register("description", {required:true})} rows="6" cols="35" />
                     {errors.description &&  <p className="error">Description is required</p>}
                     <input type="url" placeholder="Image url" {...register("url", {required:true})} />
                     {errors.url &&  <span className="error">Image URL is required</span>}
