@@ -132,8 +132,8 @@ const PackageDetails = () => {
                       </div>
                       <div className="col-lg-4 container d-flex justify-content-center align-items-center">
                               <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
-                                    <input value={user.displayName} readOnly  />
-                                    <input value={user.email} readOnly />
+                                    <input defaultValue={user.displayName} required  />
+                                    <input defaultValue={user.email} required />
                                     <input  placeholder="Address" {...register("address", {required:true})} />
                                     {errors.address &&  <span className="error">Address is required</span>}
                                     <input   placeholder="Phone" {...register("phone", {required:true})} />
