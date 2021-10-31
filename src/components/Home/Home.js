@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import Packages from '../Packages/Packages';
 import TropicalVacation from '../TropicalVacation/TropicalVacation';
 import WhyUs from '../WhyUs/WhyUs';
+import './Home.css';
 const Home = () => {
 
     // fetch data using useEffect and assing to packages variable 
@@ -27,11 +28,12 @@ const Home = () => {
                     </div>
                 }
             </div>
-            <h1  id="package" className="text-center my-5">UPCOMING WINTER 2021 TOURS</h1>
+            <h1  id="package" className="text-center my-5 section-header">UPCOMING WINTER 2021 TOURS</h1>
             <div className="container mb-5">
                 <div className="row g-4">
                     {
                     packages.map((pkg)=><Packages
+                    key={pkg._id}
                     package={pkg}
                         ></Packages>
                     )

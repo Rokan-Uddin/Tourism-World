@@ -76,7 +76,7 @@ const AllPlan = () => {
                             <p>Tourist: <span className="text-primary">{mypackage.name}</span></p>
                             
                             <div className="m-0">
-                            <button onClick={()=>handleDelete(mypackage._id)} className="delete-btn" ><i class="fas fa-trash-alt me-2"></i>Delete</button>
+                            <button onClick={()=>handleDelete(mypackage._id)} className="delete-btn" ><i className="fas fa-trash-alt me-2"></i>Delete</button>
                             <button onClick={()=>handleUpdate(mypackage._id,mypackage.status)} className={ mypackage.status ? "approve-btn px-3" : "reject-btn px-3"} >
                                 {mypackage.status ? "Reject" : "Approve"}
                             </button>

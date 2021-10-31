@@ -1,4 +1,7 @@
+/* google font  */
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Merriweather:ital@1&family=Poppins&family=Roboto+Slab&display=swap');
+
 .banner{
     background-image: url('../../images/5.jpg');
     background-color: #cccccc; 
@@ -11,6 +14,10 @@
 	font-family: 'Irish Grover', cursive;
 	font-size: xx-large;
 	font-weight: 800;
+}
+.banner-description{
+font-family: 'Merriweather', serif;
+
 }
 .myButton {
 	box-shadow: 3px 2px 20px 0px #899599;

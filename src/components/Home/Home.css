@@ -1,5 +1,6 @@
-.services{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 15px;
+/* google font  */
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Merriweather:ital@1&family=Noto+Serif:wght@700&family=Poppins&display=swap');
+
+.section-header{
+    font-family: 'Noto Serif', serif;
 }

@@ -3,7 +3,7 @@ import './WhyUs.css';
 const WhyUs = () => {
     return (
         <div className="container px-4 mb-5">
-            <h1 className="my-4">Why Choose Us?</h1>
+            <h1 className="my-4 section-header">Why Choose Us?</h1>
             <div className="row g-4">
                 <div className="col-lg-3">
                     <div className="first-cart">

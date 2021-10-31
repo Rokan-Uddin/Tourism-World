@@ -9,7 +9,7 @@ const TropicalVacation = () => {
     },[])
     return (
         <div className="container">
-            <h1>6 Best Tropical Vacations</h1>
+            <h1 className="section-header">6 Best Tropical Vacations</h1>
             <p className="mb-5">Dreamy beaches, silky warm seas, lush scenery, and endless sunshine – these are some of the top ingredients of 
             the ideal tropical vacation. But each destination offers its own sultry charms. Some dazzle with their natural beauty. 
             Others add cultural attractions to the mix, with exotic customs, architecture, and mouthwatering cuisine. A few offer eco-adventures and 
@@ -17,7 +17,7 @@ const TropicalVacation = () => {
             <div className="row g-4">
                 {
                     vacations.map(vacation=><div
-                    key={vacations._id}
+                    key={vacation._id}
                     className="col-lg-6 col-sm-12"
                     >
                         <div className="vacation-cart">
