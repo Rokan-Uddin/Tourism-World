@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 const AllPlan = () => {
             const [mypackages,setMypackages]=useState([]);
@@ -17,34 +19,66 @@ const AllPlan = () => {
 
             //delete a confirmed plan/package 
             const handleDelete=(_id)=>{
-                const sure= window.confirm("Are you sure?")
-                if(sure) {
-                    axios.delete(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}`)
-                    .then(res => {
-                        if(res.status){
-                            setLoading(false)
-                        }
-                        else{
-                            alert("Something is wrong,please try again")
-                        }
-                    })
-                }
+                confirmAlert({
+                    customUI: ({ onClose }) => {
+                      return (
+                        <div className='custom-ui'>
+                          <h1>Are you sure?</h1>
+                          <p>You want to delete this file?</p>
+                          <button onClick={onClose} className="yes-no">No</button>
+                          <button
+                            onClick={() => {
+                                axios.delete(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}`)
+                                .then(res => {
+                                    if(res.status){
+                                        setLoading(false)
+                                    }
+                                    else{
+                                        alert("Something is wrong,please try again")
+                                    }
+                                })
+                              onClose();
+                            }}
+                            className="yes-no"
+                          >
+                            Yes
+                          </button>
+                        </div>
+                      );
+                    }
+                  });
             }
 
             //update plan pending/approved status
             const handleUpdate=(_id,status)=>{
-                const sure= window.confirm("Are you sure?")
-                if(sure) {
-                    axios.put(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}&&status=${status}`)
-                    .then(res => {
-                        if(res.status){
-                            setLoading(false)
-                        }
-                        else {
-                            alert("Something is wrong,please try again.")
-                        }
-                    })
-                }
+                confirmAlert({
+                    customUI: ({ onClose }) => {
+                      return (
+                        <div className='custom-ui'>
+                          <h1>Are you sure?</h1>
+                          <p>You want to delete this file?</p>
+                          <button onClick={onClose} className="yes-no">No</button>
+                          <button
+                            onClick={() => {
+                                axios.put(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}&&status=${status}`)
+                                .then(res => {
+                                    if(res.status){
+                                        setLoading(false)
+                                    }
+                                    else {
+                                        alert("Something is wrong,please try again.")
+                                    }
+                                })
+                              onClose();
+                            }}
+                            className="yes-no"
+                          >
+                            Yes
+                          </button>
+                        </div>
+                      );
+                    }
+                  });
             }
     return (
         <div>

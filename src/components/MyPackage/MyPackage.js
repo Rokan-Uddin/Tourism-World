@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import useAuth from '../../hooks/useAuth';
 import './MyPackage.css';
 
@@ -20,16 +22,32 @@ const MyPackage = () => {
             console.log(user.email)
             //delete a plan/package
             const handleDelete=(_id)=>{
-                const sure= window.confirm("Are you sure?")
-                if(sure) {
-                    axios.delete(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}`)
-                    .then(res => {
-                        if(res.status){
-                            setLoading(false)
-                            alert("Deleted Successfully")
-                        }
-                    })
-                }
+                confirmAlert({
+                    customUI: ({ onClose }) => {
+                      return (
+                        <div className='custom-ui'>
+                          <h1>Are you sure?</h1>
+                          <p>You want to delete this file?</p>
+                          <button onClick={onClose} className="yes-no">No</button>
+                          <button
+                            onClick={() => {
+                                axios.delete(`https://guarded-fjord-59567.herokuapp.com/mypackage?id=${_id}`)
+                                .then(res => {
+                                    if(res.status){
+                                        setLoading(false)
+                                        alert("Deleted Successfully")
+                                    }
+                                })
+                              onClose();
+                            }}
+                            className="yes-no"
+                          >
+                            Yes
+                          </button>
+                        </div>
+                      );
+                    }
+                  });
             }
 
     return (
