@@ -16,7 +16,7 @@ const MyPackage = () => {
                     setMypackages(res.data);
                     setLoading(true)
                 })
-            },[loading])
+            },[loading, user.email])
             console.log(user.email)
             //delete a plan/package
             const handleDelete=(_id)=>{

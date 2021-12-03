@@ -21,7 +21,7 @@ const PackageDetails = () => {
         setPackage(data)
         setLoading(true)
       })
-    },[])
+    },[packageID])
 
     //send the booking information with package details,user details etc to the database.
     const onSubmit = data => {
