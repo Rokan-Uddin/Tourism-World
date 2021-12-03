@@ -15,6 +15,9 @@ const Banner = () => {
                         {
                             !user.email && <Link to='/login' className="myButton" >Sign In</Link>
                         }
+                        {
+                            user.email && <Link to='/add' className="myButton" >Create a tour package</Link>
+                        }
                   </div>
               </div>
           </div>

@@ -17,7 +17,7 @@ const MyPackage = () => {
                     setLoading(true)
                 })
             },[loading])
-
+            console.log(user.email)
             //delete a plan/package
             const handleDelete=(_id)=>{
                 const sure= window.confirm("Are you sure?")
